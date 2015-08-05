@@ -32,5 +32,6 @@ ExecStop=/usr/bin/docker stop marathon
 WantedBy=multi-user.target
 
 [X-Fleet]
-Global=true
+Conflicts=marathon@*.service
 MachineMetadata=role=control
+MachineOf=mesos-master@%i.service

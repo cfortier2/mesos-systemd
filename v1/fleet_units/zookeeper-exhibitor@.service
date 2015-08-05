@@ -26,5 +26,6 @@ ExecStop=/usr/bin/docker stop zookeeper-exhibitor
 WantedBy=multi-user.target
 
 [X-Fleet]
-Global=true
+Conflicts=zookeeper-exhibitor@*.service
 MachineMetadata=role=control
+MachineOf=mesos-master@%i.service

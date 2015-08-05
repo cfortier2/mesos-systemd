@@ -1,5 +1,5 @@
 [Unit]
-Description=MesosMaster
+Description=Mesos Master
 After=docker.service
 Requires=docker.service
 
@@ -32,5 +32,5 @@ ExecStartPost=/usr/bin/docker pull cfortier/utility:latest
 WantedBy=multi-user.target
 
 [X-Fleet]
-Global=true
+Conflicts=mesos-master@*.service
 MachineMetadata=role=control
