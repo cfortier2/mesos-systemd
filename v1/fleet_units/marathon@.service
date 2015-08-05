@@ -34,4 +34,4 @@ WantedBy=multi-user.target
 [X-Fleet]
 Conflicts=marathon@*.service
 MachineMetadata=role=control
-MachineOf=mesos-master@%i.service
+MachineOf=zookeeper-exhibitor@%i.service
