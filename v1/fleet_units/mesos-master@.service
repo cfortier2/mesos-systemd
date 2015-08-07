@@ -1,6 +1,6 @@
 [Unit]
 Description=Mesos Master
-After=docker.service
+After=docker.service zookeeper-exhibitor.service
 Requires=docker.service
 
 [Service]
