@@ -33,5 +33,6 @@ ExecStartPost=/usr/bin/docker pull cfortier/utility:latest
 WantedBy=multi-user.target
 
 [X-Fleet]
-Global=true
 MachineMetadata=role=control
+Conflicts=mesos-master@*.service
+MachineOf=zookeeper-exhibitor@%i.service

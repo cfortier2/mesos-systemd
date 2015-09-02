@@ -1,7 +1,7 @@
 [Unit]
 Description=Marathon
 After=docker.service zookeeper-exhibitor.service mesos-master.service
-Requires=docker.service 
+Requires=docker.service
 Wants=zookeeper-exhibitor.service
 
 [Service]
@@ -31,5 +31,6 @@ ExecStop=/usr/bin/docker stop marathon
 WantedBy=multi-user.target
 
 [X-Fleet]
-Global=true
 MachineMetadata=role=control
+Conflicts=marathon@*.service
+MachineOf=zookeeper-exhibitor@%i.service

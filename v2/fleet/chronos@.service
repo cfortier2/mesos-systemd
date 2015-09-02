@@ -37,5 +37,6 @@ ExecStop=/usr/bin/docker stop chronos
 WantedBy=multi-user.target
 
 [X-Fleet]
-Global=true
+Conflicts=chronos@*.service
 MachineMetadata=role=control
+MachineOf=zookeeper-exhibitor@%i.service
